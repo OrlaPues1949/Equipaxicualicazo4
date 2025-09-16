@@ -1,5 +1,9 @@
-Recordatorio para Reprobar a Orlando en este POST
+Tema: Análisis de programas espaciales nacionales a través del tiempo 
 
-POR FAVOR QUIEN VEA ESTO NO DESCARGE NADA DE ESTE POST
+El desarrollo y presupuesto para programas espaciales en países con similares niveles de desarrollo económico y social varía significativamente, habiendo mejores resultados y aportaciones en un entorno de relativa igualdad de condiciones. En 2024 por ejemplo, el presupuesto de la Agencia Espacial Mexicana (AEM) fue de USD 5 millones, mientras que en la Agencia Espacial de Brasil (AEB) fue de USD 20 millones, llegando a ser 4 veces mayor.  
 
-😭
+Las causas de esta diferencia derivan en factores que van desde distintos enfoques estratégicos como la visión a largo plazo en cuanto al apartado tecnológico, el grado de apoyo político y la capacidad técnica (como la infraestructura o comunidad científica presente) entre países.  
+
+Esta falta de avance por parte de ciertos países desemboca en su dependencia a programas extranjeros, conllevando a la falta de desarrollo propio que diversifique aportes en el área y alentando su evolución. 
+
+Resolver este problema es importante porque permite analizar las diferencias en presupuesto y desarrollo de programas espaciales en países con condiciones económicas similares. El proyecto aportara una página web comparativa como un recurso, donde podrán consultar los presupuestos, el desarrollo y resultados de los programas espaciales a lo largo del tiempo en distintos países, generando así una guía de análisis histórico. Es viable con recursos digitales como fuentes oficiales o artículos académicos, las habilidades del equipo tanto en investigación como en el diseño de la página web, además del tiempo asignado al proyecto, también los posibles riesgos son la falta de información actualizada del tema, pero serán mitigados con la verificación de múltiples fuentes confiables. Los beneficiarios son estudiantes, profesores y personas interesadas en los programas de exploración espacial, quienes podrán acceder a información comparativa de los programas espaciales internacionales. 
