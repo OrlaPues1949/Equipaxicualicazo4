@@ -1,0 +1,23 @@
+h1{
+    color: white;
+ }
+ p{
+    color: white;
+ }
+ #q{
+    color:blueviolet;
+ }
+.imagenxd {
+  width: 100%;
+  height: 50vh;
+  background-image: url("imagenes_w/lunaequisde.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;   /* makes it fill nicely */
+  display: flex;            /* helps center text */
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  color: white;             /* text color */
+  text-align: center;
+  
+}
