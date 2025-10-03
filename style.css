@@ -13,11 +13,11 @@ h1{
   background-image: url("imagenes_w/lunaequisde.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;   /* makes it fill nicely */
-  display: flex;            /* helps center text */
-  justify-content: center;  /* center horizontally */
-  align-items: center;      /* center vertically */
-  color: white;             /* text color */
+  background-size: cover;  
+  display: flex;            
+  justify-content: center;  
+  align-items: center;      
+  color: white;            
   text-align: center;
   
 }
