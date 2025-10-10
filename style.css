@@ -4,6 +4,9 @@ h1{
  p{
     color: white;
  }
+ pre{
+    color: white;
+ }
  #q{
     color:blueviolet;
  }
@@ -20,4 +23,55 @@ h1{
   color: white;            
   text-align: center;
   
+}
+div {
+  position: relative;
+  display: inline;
+}
+.imtip {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#main_image{
+    width: 100%;
+    height: 100%;
+    src: url("imagenes_w/mapamundiproyeccionrobinson.jpg");
+}
+#overlay_image{
+    position: absolute;
+    src: url("imagenes_w/mexicoprueba.png");
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+.parent {
+    position: relative;
+    display: inline-block; /* para que se ajuste al tamaño real de la imagen base */
+}
+
+.base {
+    display: block;
+    width: 100%;  /* si quieres que escale, si no ponle width: auto */
+    height: auto;
+}
+
+.inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.overlay {
+    display: block;
+    width: 100%;  /* hace que la overlay coincida en tamaño con la base */
+    height: auto;
+    opacity: 1; /* para comprobar que está encima */
 }
