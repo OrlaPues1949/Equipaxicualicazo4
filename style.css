@@ -68,12 +68,12 @@ div {
 }
 .parent {
     position: relative;
-    display: inline-block; /* para que se ajuste al tamaño real de la imagen base */
+    display: inline-block; 
 }
 
 .base {
     display: block;
-    width: 100%;  /* si quieres que escale, si no ponle width: auto */
+    width: 100%;  
     height: auto;
 }
 
@@ -86,7 +86,7 @@ div {
 
 .overlay {
     display: block;
-    width: 100%;  /* hace que la overlay coincida en tamaño con la base */
+    width: 100%;  
     height: auto;
-    opacity: 1; /* para comprobar que está encima */
+    opacity: 1; 
 }
