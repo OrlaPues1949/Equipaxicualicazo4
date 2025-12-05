@@ -272,3 +272,47 @@ footer {
   margin: 0 0 10px 0;
   line-height: 1.5;
 }
+.img-caption {
+    font-size: 0.5em; /* un poco más pequeño que antes */
+    color: #b0b3b8;
+    margin-top: 4px;
+    font-style: italic;
+    display: block;
+}
+.image-container {
+    margin: 20px 0; /* controla el espacio total de la imagen + pie */
+    text-align: center; /* centra imagen y pie */
+}
+/* --- Pies de imagen seguros --- */
+figure.custom-figure {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+figure.custom-figure img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #2d2d44;
+}
+
+figure.custom-figure figcaption {
+    font-size: 0.65rem;
+    font-style: italic;
+    color: #b0b3b8;
+    margin: 4px 0 0 0;
+    line-height: 1;
+    text-align: center;
+}
+.mission-section {
+    text-align: center; /* centra todas las figuras y su contenido inline */
+}
+
+.mission-section figure {
+    display: inline-block;
+    margin: 0 10px; /* espacio entre figuras */
+    vertical-align: top; /* evita que se bajen respecto al texto */
+}
