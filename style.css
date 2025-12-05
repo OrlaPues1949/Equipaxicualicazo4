@@ -97,9 +97,9 @@ footer {
   color: white;
   font-family: Arial, sans-serif;
 
-  /* 🛠️ Borde metálico alrededor */
+
   border: 12px solid transparent;
-  border-image: url('imagenes_w/espaciobienlocuaz.jpg') 30 stretch; /* ← Pon el nombre de tu imagen */
+  border-image: url('imagenes_w/espaciobienlocuaz.jpg') 30 stretch;
   box-sizing: border-box;
 }
 
@@ -158,7 +158,6 @@ footer {
   margin-bottom: 10px;
 }
 
-/* 🎯 Flechas modo turbo */
 .arrow {
   font-size: 45px;
   animation: arrowPulse 1.2s infinite ease-in-out alternate;
@@ -173,7 +172,6 @@ footer {
                0 0 40px rgba(255, 224, 0, 0.9);
 }
 
-/* ✨ Animación */
 @keyframes arrowPulse {
   0% {
     transform: translateY(-7px) scale(1);
@@ -198,9 +196,8 @@ footer {
   position: relative;
 }
 
-/* FLECHAS GENERALES */
 .arrow {
-  font-size: 85px; /* TAMAÑO GIGANTE */
+  font-size: 85px; 
   font-weight: bold;
   color: transparent;
   background: linear-gradient(45deg, #ff00aa, #ff9100, #ffee00, #00eaff, #7f00ff);
@@ -216,7 +213,6 @@ footer {
   animation: arrowGlow 1.4s infinite ease-in-out alternate;
 }
 
-/* ANIMACIÓN MÁS INTENSA */
 @keyframes arrowGlow {
   0% {
     transform: scale(1);
@@ -236,7 +232,6 @@ footer {
   }
 }
 
-/* FLECHAS DIAGONALES */
 .diagonal.left {
   transform: rotate(-45deg);
 }
@@ -245,7 +240,6 @@ footer {
   transform: rotate(45deg);
 }
 
-/* ANIMACIÓN EXTRA para diagonales */
 .diagonal {
   animation: diagonalPulse 1.7s infinite ease-in-out alternate;
 }
@@ -255,11 +249,9 @@ footer {
   100% { transform: rotate(var(--angle, 0deg)) scale(1.25); }
 }
 
-/* VARIABLES PARA ÁNGULOS */
 .diagonal.left { --angle: -45deg; }
 .diagonal.right { --angle: 45deg; }
 
-/* TAMAÑO VERTICAL MÁS GRANDE TODAVÍA */
 .vertical {
   font-size: 100px;
 }
