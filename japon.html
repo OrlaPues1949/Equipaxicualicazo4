@@ -5,6 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programas Espaciales de JAXA</title>
     <style>
+        .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-color: #000;          /* Negro */
+      color: #fff;                      /* Letras blancas */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
+
+    .navbar-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-left: 3rem;
+    }
+
+    .nav-item a,
+    .nav-item button {
+      background: none;
+      border: none;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0.4rem 0.2rem;
+    }
+
+    .nav-item a:hover,
+    .nav-item button:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Dropdown */
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .dropdown-toggle::after {
+      content: "▾";
+      font-size: 0.75rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #111;
+      border-radius: 0.25rem;
+      padding: 0.4rem 0;
+      min-width: 220px;
+      list-style: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      display: none; /* se muestra con la clase .show */
+      z-index: 1100;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #222;
+    }
+
+    /* Para que el contenido no quede debajo de la barra */
+    main {
+      padding: 5rem 1.5rem 2rem;
+    }
+
+    /* Responsive simple */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 1rem;
+      }
+      .navbar-menu {
+        gap: 1rem;
+      }
+    }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -91,8 +198,247 @@
             border: 2px solid #2d2d44;
             display: block;
         }
+                footer {
+  background: #1a0015;
+  padding: 25px 0;
+  text-align: center;
+  color: white;
+      
+          
+  letter-spacing: 0.05em;      
+
+
+  border: 12px solid transparent;
+  border-image: url('imagenes_w/espaciobienlocuaz.jpg') 30 stretch;
+  box-sizing: border-box;
+}
+
+.footer-content p a {
+  display: block;
+  margin: 3px 0;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-content p a:hover {
+  color: white;
+}
+.donation-button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin-top: 10px;
+
+  background: linear-gradient(45deg, #ff0080, #ff8c00, #ffe600, #00eaff, #7b00ff);
+  background-size: 400% 400%;
+
+  border: 3px solid transparent;
+  border-image: linear-gradient(45deg, #ff0080, #ffe600, #00eaff, #7b00ff) 1;
+
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+
+  box-shadow: 0 0 20px rgba(255, 0, 128, 0.7),
+              0 0 40px rgba(0, 234, 255, 0.6),
+              0 0 60px rgba(255, 224, 0, 0.7);
+
+  animation: donationGlow 6s infinite linear;
+  transition: transform 0.2s ease-in-out;
+}
+
+.donation-button:hover {
+  transform: scale(1.15);
+
+  box-shadow: 0 0 30px rgba(255, 0, 128, 1),
+              0 0 60px rgba(0, 234, 255, 1),
+              0 0 90px rgba(255, 224, 0, 1);
+}
+@keyframes donationGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.arrow-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  font-size: 45px;
+  animation: arrowPulse 1.2s infinite ease-in-out alternate;
+  color: transparent;
+  background: linear-gradient(45deg, #ff0090, #ff9100, #ffee00, #00eaff, #7f00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  text-shadow: 0 0 10px rgba(255, 0, 128, 0.7),
+               0 0 25px rgba(0, 234, 255, 0.7),
+               0 0 40px rgba(255, 224, 0, 0.9);
+}
+
+@keyframes arrowPulse {
+  0% {
+    transform: translateY(-7px) scale(1);
+    background-position: 0% 50%;
+  }
+  50% {
+    transform: translateY(0) scale(1.15);
+    background-position: 100% 50%;
+  }
+  100% {
+    transform: translateY(7px) scale(1.25);
+    background-position: 0% 50%;
+  }
+}
+.arrows-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.arrow {
+  font-size: 85px; 
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(45deg, #ff00aa, #ff9100, #ffee00, #00eaff, #7f00ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  text-shadow: 
+    0 0 15px rgba(255, 0, 128, 0.9),
+    0 0 30px rgba(0, 234, 255, 0.9),
+    0 0 45px rgba(255, 224, 0, 1);
+
+  animation: arrowGlow 1.4s infinite ease-in-out alternate;
+}
+
+@keyframes arrowGlow {
+  0% {
+    transform: scale(1);
+    background-position: 0% 50%;
+    text-shadow:
+      0 0 20px rgba(255, 0, 128, 0.9),
+      0 0 35px rgba(0, 234, 255, 1),
+      0 0 50px rgba(255, 224, 0, 1);
+  }
+  100% {
+    transform: scale(1.3) translateY(10px);
+    background-position: 100% 50%;
+    text-shadow:
+      0 0 25px rgba(255, 0, 128, 1),
+      0 0 45px rgba(0, 234, 255, 1),
+      0 0 70px rgba(255, 224, 0, 1);
+  }
+}
+
+.diagonal.left {
+  transform: rotate(-45deg);
+}
+
+.diagonal.right {
+  transform: rotate(45deg);
+}
+
+.diagonal {
+  animation: diagonalPulse 1.7s infinite ease-in-out alternate;
+}
+
+@keyframes diagonalPulse {
+  0% { transform: rotate(var(--angle, 0deg)) scale(1); }
+  100% { transform: rotate(var(--angle, 0deg)) scale(1.25); }
+}
+
+.diagonal.left { --angle: -45deg; }
+.diagonal.right { --angle: 45deg; }
+
+.vertical {
+  font-size: 100px;
+}
+.footer-section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #cccccc;
+}
+
+.team-list,
+.contact-list {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+.img-caption {
+    font-size: 0.5em; /* un poco más pequeño que antes */
+    color: #b0b3b8;
+    margin-top: 4px;
+    font-style: italic;
+    display: block;
+}
+.image-container {
+    margin: 20px 0; /* controla el espacio total de la imagen + pie */
+    text-align: center; /* centra imagen y pie */
+}
     </style>
 </head>
+<header class="navbar">
+    <div class="navbar-logo">
+      IBERO PUEBLA
+    </div>
+
+    <nav>
+      <ul class="navbar-menu">
+        <li class="nav-item">
+          <a href="index.html">Inicio</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <button class="dropdown-toggle" type="button">Países</button>
+          <ul class="dropdown-menu">
+            <li><a href="disparoshundidos.html">EUA</a></li>
+            <li><a href="mexico.html">México</a></li>
+            <li><a href="al-andalus.html">Unión Europea</a></li>
+            <li><a href="urss.html">Unión Soviética</a></li>
+            <li><a href="turquia.html">Turquía</a></li>
+            <li><a href="iran.html">Irán</a></li>
+            <li><a href="rusia.html">Rusia</a></li>
+            <li><a href="india.html">India</a></li>
+            <li><a href="china.html">China</a></li>
+            <li><a href="corea.html">Corea del Norte</a></li>
+            <li><a href="japon.html">Japón</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header><!-- Pueba chingona -->
+<!-- Pueba chingona -->
+  <script>
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    // Cierra el menú si haces clic fuera
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dropdown')) {
+        dropdownMenu.classList.remove('show');
+      }
+    });
+  </script><!-- Pueba chingona -->
 <body>
     <div class="context-section">
         <h1>Contexto</h1>
@@ -168,4 +514,50 @@
         Página principal
     </a>
 </body>
+<footer>
+  <div class="footer-content">
+    <p class="footer-section-title">Integrantes del equipo</p>
+<p class="team-list">
+  Orlando T.<br>
+  Mary O.<br>
+  Pablo C.
+</p>
+
+<p class="footer-section-title">Contacto</p>
+<p class="contact-list">
+  <a href="mailto:200286@iberopuebla.mx">200286@iberopuebla.mx</a><br>
+  <a href="mailto:199802@iberopuebla.mx">199802@iberopuebla.mx</a><br>
+  <a href="mailto:203698@iberopuebla.mx">203698@iberopuebla.mx</a>
+</p>
+<div class="arrow-container">
+    <div class="arrow">⬇</div>
+    <div class="arrow">⬇</div>
+    <div class="arrow">⬇</div>
+</div>
+
+<div class="arrows-wrapper">
+
+    <!-- Flechas diagonales izquierda -->
+    <div class="arrow diagonal left">⬇</div>
+    <div class="arrow diagonal left">⬇</div>
+
+    <!-- Flechas verticales -->
+    <div class="arrow vertical">⬇</div>
+    <div class="arrow vertical">⬇</div>
+    <div class="arrow vertical">⬇</div>
+
+    <!-- Flechas diagonales derecha -->
+    <div class="arrow diagonal right">⬇</div>
+    <div class="arrow diagonal right">⬇</div>
+
+</div>
+
+<p>
+  <a href="RugidoDeTripa.html" class="donation-button" title="Tengo hambre">
+    Donación 🤑🤑🤑🤑
+  </a>
+</p>
+  </div>
+</footer>
+
 </html>
