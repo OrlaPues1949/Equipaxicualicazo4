@@ -1,8 +1,212 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rugido de Tripa Supremo</title>
 
-   <p>N° de tu tarjeta de crédito: </p> <input type="text"> 
-    <p>Fecha de caducidad: </p> <input type="text"> 
-    <p>CVV: </p> <input type="text"> 
-   <input type="submit" value="Tengo hambre we" />
+<style>
+    body {
+        margin: 0;
+        background: black;
+        color: white;
+        font-family: Impact, Arial Black, sans-serif;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    /* Botón inicial */
+    #startButton {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 25px 45px;
+        background: red;
+        color: white;
+        font-size: 30px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        z-index: 10000;
+    }
+
+    /* Intro negro + fade-in */
+    #intro {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 5s ease-in-out;
+        z-index: 9000;
+    }
+
+    #intro img {
+        max-width: 90%;
+        max-height: 90%;
+        border: 4px solid white;
+        filter: drop-shadow(0 0 25px white);
+    }
+
+    /* Contenido */
+    #contenido {
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        margin-top: 80px;
+    }
+
+    /* Flechas */
+    .flecha {
+        position: absolute;
+        width: 130px;
+        filter: drop-shadow(0 0 15px red) brightness(2);
+        animation: brillar 0.8s infinite alternate;
+    }
+
+    @keyframes brillar {
+        0% { transform: scale(1); filter: drop-shadow(0 0 10px red); }
+        100% { transform: scale(1.15); filter: drop-shadow(0 0 25px yellow); }
+    }
+
+    /* Campos brillantes */
+    .campo {
+        font-size: 30px;
+        padding: 10px;
+        margin: 20px;
+        width: 350px;
+        border: 5px solid gold;
+        border-radius: 10px;
+        background: black;
+        color: gold;
+        text-align: center;
+        box-shadow: 0px 0px 25px gold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .campo:focus {
+        transform: scale(1.2);
+        box-shadow: 0px 0px 35px white;
+        outline: none;
+    }
+
+    #cantidad {
+        transition: width 0.7s ease-in-out;
+    }
+
+    /* Mensaje dinámico */
+    #mensaje {
+        font-size: 35px;
+        margin-top: 20px;
+        min-height: 50px;
+        font-weight: bold;
+        text-shadow: 0 0 15px yellow;
+    }
+</style>
+</head>
+<body>
+
+<!-- Botón inicio -->
+<button id="startButton">Tengo hambre we</button>
+
+<!-- Intro fade-in -->
+<div id="intro">
+    <img src="imagenes_w/rugidos.jpg">
+</div>
+
+<!-- Contenido -->
+<div id="contenido">
+    <h1 style="font-size:60px; text-shadow: 0 0 20px red;">DONA AHORA (ANTES DE QUE SEA DEMASIADO TARDE)</h1>
+    <p style="font-size:25px; margin-bottom:40px;">Introduce tus datos (se enviarán directamente a mi lobulo occipital)</p>
+
+    <!-- Número de tarjeta -->
+    <div style="position:relative; display:inline-block;">
+        <input id="num" class="campo" placeholder="Número de tarjeta">
+        <img src="imagenes_w/flecha2.png" class="flecha" style="top:-120px; left:-150px; transform:rotate(20deg);">
+    </div>
+
+    <!-- Fecha -->
+    <div style="position:relative; display:inline-block;">
+        <input id="fecha" class="campo" placeholder="Fecha de cad. MM/YY">
+        <img src="imagenes_w/flecha6.png" class="flecha" style="top:-140px; left:-160px; transform:rotate(10deg);">
+    </div>
+
+    <!-- CVV -->
+    <div style="position:relative; display:inline-block;">
+        <input id="cvv" class="campo" placeholder="CVV">
+        <img src="imagenes_w/flecha7.png" class="flecha" style="top:-150px; left:120px; transform:rotate(-80deg);">
+    </div>
+
+    <br><br><br>
+
+    <h2 style="font-size:40px; text-shadow:0 0 15px cyan;">Cantidad a donar</h2>
+
+    <input id="cantidad" class="campo" placeholder="$0.00" style="width:250px;">
+
+    <div id="mensaje"></div>
+
+</div>
+
+<audio id="rugido" src="imagenes_w/godzilla.mp3"></audio>
+
+<script>
+    const startButton = document.getElementById("startButton");
+    const intro = document.getElementById("intro");
+    const contenido = document.getElementById("contenido");
+    const rugido = document.getElementById("rugido");
+    const mensaje = document.getElementById("mensaje");
+
+    const num = document.getElementById("num");
+    const fecha = document.getElementById("fecha");
+    const cvv = document.getElementById("cvv");
+
+    startButton.addEventListener("click", () => {
+        startButton.style.display = "none";
+
+        intro.style.opacity = 1;
+        rugido.currentTime = 0;
+        rugido.play();
+
+        setTimeout(() => {
+            intro.style.display = "none";
+            contenido.style.opacity = 1;
+        }, 5000);
+    });
+
+    const cantidad = document.getElementById("cantidad");
+
+    cantidad.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+
+            // Validar primero los campos de tarjeta
+            if (num.value.trim() === "" || fecha.value.trim() === "" || cvv.value.trim() === "") {
+                mensaje.style.color = "red";
+                mensaje.style.textShadow = "0 0 15px red";
+                mensaje.innerHTML = "Error: faltan datos esenciales de la tarjeta.";
+                return;
+            }
+
+            let val = cantidad.value.replace(/[^0-9]/g, "");
+
+            // SI VALOR ES 0 → ALERT (como antes)
+            if (val === "0" || val === "") {
+                alert("Error, no se puede ingresar un valor no positivo, vaciando tarjeta...");
+                cantidad.value = "";
+                return;
+            }
+
+            cantidad.value = cantidad.value + "0000000000";
+            cantidad.style.width = "550px";
+
+            mensaje.style.color = "yellow";
+            mensaje.style.textShadow = "0 0 15px yellow";
+            mensaje.innerHTML = "Gracias por tu generosidad tilín";
+        }
+    });
+</script>
+
+</body>
 </html>

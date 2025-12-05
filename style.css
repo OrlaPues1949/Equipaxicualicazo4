@@ -91,11 +91,13 @@ div {
   height: auto;
 }
 footer {
-  background: #1a1a1a;
+  background: #1a0015;
   padding: 25px 0;
   text-align: center;
   color: white;
-  font-family: Arial, sans-serif;
+      
+          
+  letter-spacing: 0.05em;      
 
 
   border: 12px solid transparent;
