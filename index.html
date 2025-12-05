@@ -5,7 +5,116 @@
   <link rel="icon" type="image/png" href="imagenes_w/logotemporal.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  
+  <!-- Pueba chingona -->
+  <style>
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-color: #000;          /* Negro */
+      color: #fff;                      /* Letras blancas */
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+    }
+
+    .navbar-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-left: 3rem;
+    }
+
+    .nav-item a,
+    .nav-item button {
+      background: none;
+      border: none;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 0.4rem 0.2rem;
+    }
+
+    .nav-item a:hover,
+    .nav-item button:hover {
+      border-bottom: 2px solid #fff;
+    }
+
+    /* Dropdown */
+    .nav-item.dropdown {
+      position: relative;
+    }
+
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .dropdown-toggle::after {
+      content: "▾";
+      font-size: 0.75rem;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background-color: #111;
+      border-radius: 0.25rem;
+      padding: 0.4rem 0;
+      min-width: 220px;
+      list-style: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      display: none; /* se muestra con la clase .show */
+      z-index: 1100;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #222;
+    }
+
+    /* Para que el contenido no quede debajo de la barra */
+    main {
+      padding: 5rem 1.5rem 2rem;
+    }
+
+    /* Responsive simple */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 1rem;
+      }
+      .navbar-menu {
+        gap: 1rem;
+      }
+    }
+  </style><!-- Pueba chingona -->
 </head>
 <body style="background-color: #050113;">
 <!-- Pueba chingona -->
